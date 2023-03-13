@@ -28,18 +28,18 @@
             </a>
 
             <ul class="ms-auto nav nav-pills">
-                <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Data Klub</a></li>
+                <li class="nav-item"><a href="{{ route('data-klub') }}" class="nav-link {{ request()->routeIs('data-klub') ? 'active' : '' }}" aria-current="page">Data Klub</a></li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Input Score
+                    <a class="nav-link dropdown-toggle {{ request()->routeIs('pertandingan-tambah-satu') ? 'active' : '' }}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Tambah Pertandingan
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Satu Per Satu</a></li>
+                        <li><a class="dropdown-item" href="{{ route('pertandingan-tambah-satu') }}">Satu Per Satu</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="#">Multiple</a></li>
                     </ul>
                 </li>
-                <li class="nav-item"><a href="#" class="nav-link">Klasemen</a></li>
+                <li class="nav-item"><a href="{{ route('klasemen') }}" class="nav-link {{ request()->routeIs('klasemen') ? 'active' : '' }}">Klasemen</a></li>
             </ul>
         </header>
     </div>

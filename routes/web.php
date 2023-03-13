@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\DataKlubContoller;
+use App\Http\Controllers\PertandinganController;
+use App\Http\Controllers\KlasemenController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [DataKlubContoller::class, 'index'])->name('data-klub');
 Route::post('/tambah-klub', [DataKlubContoller::class, 'store'])->name('tambah-klub');
+
+Route::get('/pertandingan/tambah-satu', [PertandinganController::class, 'create'])->name('pertandingan-tambah-satu');
+Route::get('/pertandingan/tambah-satu/get-klub-tamu/{id}', [PertandinganController::class, 'getKlubTamu'])->name('pertandingan-tambah-satu-get-klub-tamu');
+Route::post('/pertandingan/tambah-satu', [PertandinganController::class, 'store'])->name('pertandingan-tambah-satu-simpan');
+
+Route::get('/klasemen', [KlasemenController::class, 'index'])->name('klasemen');
